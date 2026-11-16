@@ -1,0 +1,22 @@
+{
+ "app": "ledgerx_hotels",
+ "creation": "2026-11-16 08:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Dock",
+ "idx": 0,
+ "items": [
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "building-2",
+   "link_to": "Hotels",
+   "link_type": "Sidebar",
+   "title": "Hotels"
+  }
+ ],
+ "modified": "2026-11-16 08:00:00.000000",
+ "modified_by": "Administrator",
+ "name": "hotels",
+ "owner": "Administrator",
+ "standard": 1
+}

@@ -1,0 +1,242 @@
+{
+ "actions": [],
+ "creation": "2026-11-16 08:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "base_currency",
+  "cost_center",
+  "selling_price_list",
+  "cb1",
+  "check_in_time",
+  "check_out_time",
+  "deposit_pct",
+  "sb_tax",
+  "service_rate",
+  "vat_rate",
+  "fee_rate",
+  "vat_on_service",
+  "cb2",
+  "service_account",
+  "vat_account",
+  "fee_account",
+  "sb_items",
+  "room_item",
+  "service_item",
+  "cb3",
+  "room_income_account",
+  "service_income_account",
+  "sb_cancel",
+  "free_cancel_days",
+  "cancel_fee_pct",
+  "cb4",
+  "corporate_billing_day"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "base_currency",
+   "fieldtype": "Link",
+   "label": "Company Currency",
+   "options": "Currency",
+   "fetch_from": "company.default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "selling_price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List",
+   "description": "Only used to satisfy the invoice; the hotel sets every price itself."
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "check_in_time",
+   "fieldtype": "Time",
+   "label": "Standard Check-in Time",
+   "default": "14:00:00"
+  },
+  {
+   "fieldname": "check_out_time",
+   "fieldtype": "Time",
+   "label": "Standard Check-out Time",
+   "default": "12:00:00"
+  },
+  {
+   "fieldname": "deposit_pct",
+   "fieldtype": "Percent",
+   "label": "Deposit Required (%)",
+   "default": 0,
+   "description": "Share of the stay total asked as a deposit when a reservation is confirmed."
+  },
+  {
+   "fieldname": "sb_tax",
+   "fieldtype": "Section Break",
+   "label": "Taxes and Service Charge"
+  },
+  {
+   "fieldname": "service_rate",
+   "fieldtype": "Percent",
+   "label": "Service Charge (%)",
+   "default": 12
+  },
+  {
+   "fieldname": "vat_rate",
+   "fieldtype": "Percent",
+   "label": "VAT (%)",
+   "default": 14
+  },
+  {
+   "fieldname": "fee_rate",
+   "fieldtype": "Percent",
+   "label": "Tourism Fee (%)",
+   "default": 0
+  },
+  {
+   "fieldname": "vat_on_service",
+   "fieldtype": "Check",
+   "label": "VAT Also Applies to the Service Charge",
+   "default": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_account",
+   "fieldtype": "Link",
+   "label": "Service Charge Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "vat_account",
+   "fieldtype": "Link",
+   "label": "VAT Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "fee_account",
+   "fieldtype": "Link",
+   "label": "Tourism Fee Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "sb_items",
+   "fieldtype": "Section Break",
+   "label": "Revenue"
+  },
+  {
+   "fieldname": "room_item",
+   "fieldtype": "Link",
+   "label": "Room Night Item",
+   "options": "Item",
+   "description": "Created automatically on install."
+  },
+  {
+   "fieldname": "service_item",
+   "fieldtype": "Link",
+   "label": "Services Item",
+   "options": "Item",
+   "description": "Created automatically on install."
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "room_income_account",
+   "fieldtype": "Link",
+   "label": "Room Revenue Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "service_income_account",
+   "fieldtype": "Link",
+   "label": "Services Revenue Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "sb_cancel",
+   "fieldtype": "Section Break",
+   "label": "Cancellation Policy"
+  },
+  {
+   "fieldname": "free_cancel_days",
+   "fieldtype": "Int",
+   "label": "Free Cancellation Until (days before arrival)",
+   "default": 3
+  },
+  {
+   "fieldname": "cancel_fee_pct",
+   "fieldtype": "Percent",
+   "label": "Late Cancellation Fee (% of the first night)",
+   "default": 100
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "corporate_billing_day",
+   "fieldtype": "Int",
+   "label": "Corporate Invoice Day of Month",
+   "default": 1,
+   "description": "On this day the company invoices for last month's stays are created."
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-16 08:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Hotel Settings",
+ "owner": "Administrator",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "permissions": [
+  {
+   "role": "Hotel Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1
+  },
+  {
+   "role": "Hotel Accountant",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  }
+ ],
+ "icon": "fa fa-cog",
+ "issingle": 1,
+ "allow_rename": 0
+}

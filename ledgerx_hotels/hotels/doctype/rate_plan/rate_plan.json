@@ -1,0 +1,228 @@
+{
+ "actions": [],
+ "creation": "2026-11-16 08:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_name",
+  "hotel",
+  "room_type",
+  "enabled",
+  "cb1",
+  "valid_from",
+  "valid_to",
+  "currency",
+  "sb_who",
+  "applicable_to",
+  "party",
+  "cb2",
+  "priority",
+  "min_nights",
+  "sb_rates",
+  "rate_room_only",
+  "rate_bb",
+  "cb3",
+  "rate_hb",
+  "rate_fb",
+  "sb_wk",
+  "weekend_uplift_pct",
+  "weekend_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "hotel",
+   "fieldtype": "Link",
+   "label": "Hotel",
+   "options": "Hotel",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "label": "Room Type",
+   "options": "Room Type",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled",
+   "default": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "label": "Valid From",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "label": "Valid To",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "sb_who",
+   "fieldtype": "Section Break",
+   "label": "Who It Is For"
+  },
+  {
+   "fieldname": "applicable_to",
+   "fieldtype": "Select",
+   "label": "Applicable To",
+   "options": "Public\nCorporate\nAgent",
+   "default": "Public"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Link",
+   "label": "Specific Company or Agent",
+   "options": "Customer",
+   "depends_on": "eval:doc.applicable_to!='Public'",
+   "description": "Leave empty for every company or agent."
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Int",
+   "label": "Priority",
+   "default": 0,
+   "description": "When two plans fit the same night, the higher number wins."
+  },
+  {
+   "fieldname": "min_nights",
+   "fieldtype": "Int",
+   "label": "Minimum Nights",
+   "default": 0
+  },
+  {
+   "fieldname": "sb_rates",
+   "fieldtype": "Section Break",
+   "label": "Nightly Rates"
+  },
+  {
+   "fieldname": "rate_room_only",
+   "fieldtype": "Currency",
+   "label": "Room Only",
+   "options": "currency"
+  },
+  {
+   "fieldname": "rate_bb",
+   "fieldtype": "Currency",
+   "label": "Bed & Breakfast",
+   "options": "currency"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate_hb",
+   "fieldtype": "Currency",
+   "label": "Half Board",
+   "options": "currency"
+  },
+  {
+   "fieldname": "rate_fb",
+   "fieldtype": "Currency",
+   "label": "Full Board",
+   "options": "currency"
+  },
+  {
+   "fieldname": "sb_wk",
+   "fieldtype": "Section Break",
+   "label": "Weekends"
+  },
+  {
+   "fieldname": "weekend_uplift_pct",
+   "fieldtype": "Percent",
+   "label": "Weekend Increase (%)",
+   "default": 0
+  },
+  {
+   "fieldname": "weekend_days",
+   "fieldtype": "Data",
+   "label": "Weekend Nights",
+   "default": "3,4",
+   "description": "Weekday numbers, Monday = 0. Default 3,4 = Thursday and Friday nights."
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-16 08:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Rate Plan",
+ "owner": "Administrator",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "permissions": [
+  {
+   "role": "Hotel Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Hotel Front Desk",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "Hotel Accountant",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  }
+ ],
+ "autoname": "format:RP-{#####}",
+ "title_field": "plan_name",
+ "icon": "fa fa-tags",
+ "show_title_field_in_link": 1,
+ "allow_rename": 0
+}

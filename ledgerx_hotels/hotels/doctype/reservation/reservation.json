@@ -1,0 +1,330 @@
+{
+ "actions": [],
+ "creation": "2026-11-16 08:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "guest",
+  "hotel",
+  "check_in",
+  "check_out",
+  "nights",
+  "cb1",
+  "status",
+  "source",
+  "source_party",
+  "bill_to",
+  "sb_room",
+  "room_type",
+  "room",
+  "meal_plan",
+  "cb2",
+  "adults",
+  "children",
+  "special_requests",
+  "sb_price",
+  "currency",
+  "promotion",
+  "nightly_rates",
+  "cb3",
+  "subtotal",
+  "discount",
+  "total",
+  "deposit_required",
+  "sb_link",
+  "arrival_transfer",
+  "flight_no",
+  "transfer_vehicle",
+  "cb4",
+  "folio",
+  "promotion_counted"
+ ],
+ "fields": [
+  {
+   "fieldname": "guest",
+   "fieldtype": "Link",
+   "label": "Guest",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "hotel",
+   "fieldtype": "Link",
+   "label": "Hotel",
+   "options": "Hotel",
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "check_in",
+   "fieldtype": "Date",
+   "label": "Check-in",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "check_out",
+   "fieldtype": "Date",
+   "label": "Check-out",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "nights",
+   "fieldtype": "Int",
+   "label": "Nights",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nConfirmed\nChecked In\nChecked Out\nCancelled\nNo Show",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "Direct\nAgent\nCorporate",
+   "default": "Direct"
+  },
+  {
+   "fieldname": "source_party",
+   "fieldtype": "Link",
+   "label": "Company or Agent",
+   "options": "Customer",
+   "depends_on": "eval:doc.source!='Direct'"
+  },
+  {
+   "fieldname": "bill_to",
+   "fieldtype": "Select",
+   "label": "Bill To",
+   "options": "Guest\nCompany or Agent",
+   "default": "Guest",
+   "depends_on": "eval:doc.source!='Direct'",
+   "description": "'Company or Agent' keeps the folio open for the monthly invoice instead of invoicing at check-out."
+  },
+  {
+   "fieldname": "sb_room",
+   "fieldtype": "Section Break",
+   "label": "Room and Plan"
+  },
+  {
+   "fieldname": "room_type",
+   "fieldtype": "Link",
+   "label": "Room Type",
+   "options": "Room Type",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "room",
+   "fieldtype": "Link",
+   "label": "Room",
+   "options": "Hotel Room",
+   "description": "Left empty, a free room of the type is assigned when you confirm."
+  },
+  {
+   "fieldname": "meal_plan",
+   "fieldtype": "Select",
+   "label": "Meal Plan",
+   "options": "Room Only\nBed & Breakfast\nHalf Board\nFull Board",
+   "default": "Bed & Breakfast",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "adults",
+   "fieldtype": "Int",
+   "label": "Adults",
+   "default": 1
+  },
+  {
+   "fieldname": "children",
+   "fieldtype": "Int",
+   "label": "Children",
+   "default": 0
+  },
+  {
+   "fieldname": "special_requests",
+   "fieldtype": "Small Text",
+   "label": "Special Requests"
+  },
+  {
+   "fieldname": "sb_price",
+   "fieldtype": "Section Break",
+   "label": "Price"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Billing Currency",
+   "options": "Currency",
+   "reqd": 1,
+   "description": "The currency of the guest's bill. The guest can still pay in any accepted currency."
+  },
+  {
+   "fieldname": "promotion",
+   "fieldtype": "Link",
+   "label": "Promotion Code",
+   "options": "Hotel Promotion"
+  },
+  {
+   "fieldname": "nightly_rates",
+   "fieldtype": "Table",
+   "label": "Nights",
+   "options": "Reservation Night",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Room Total",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total After Discount (before taxes)",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "deposit_required",
+   "fieldtype": "Currency",
+   "label": "Deposit Required",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "sb_link",
+   "fieldtype": "Section Break",
+   "label": "Transfer and Folio"
+  },
+  {
+   "fieldname": "arrival_transfer",
+   "fieldtype": "Check",
+   "label": "Airport Pick-up"
+  },
+  {
+   "fieldname": "flight_no",
+   "fieldtype": "Data",
+   "label": "Flight Number",
+   "depends_on": "arrival_transfer"
+  },
+  {
+   "fieldname": "transfer_vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle",
+   "options": "Vehicle",
+   "depends_on": "arrival_transfer"
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "folio",
+   "fieldtype": "Link",
+   "label": "Guest Folio",
+   "options": "Guest Folio",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "promotion_counted",
+   "fieldtype": "Check",
+   "label": "Promotion Counted",
+   "hidden": 1,
+   "read_only": 1,
+   "no_copy": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-16 08:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Reservation",
+ "owner": "Administrator",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "permissions": [
+  {
+   "role": "Hotel Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Hotel Front Desk",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Hotel Accountant",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "Hotel Housekeeping",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  }
+ ],
+ "autoname": "RSV-.YYYY.-.#####",
+ "title_field": "guest",
+ "icon": "fa fa-calendar-check-o",
+ "track_changes": 1,
+ "search_fields": "guest,room,check_in",
+ "allow_rename": 0
+}

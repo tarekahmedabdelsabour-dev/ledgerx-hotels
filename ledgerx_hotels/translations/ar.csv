@@ -1,0 +1,273 @@
+'Company or Agent' keeps the folio open for the monthly invoice instead of invoicing at check-out.,خيار «شركة أو وكيل» يُبقي حساب النزيل مفتوحًا للفاتورة الشهرية بدلًا من إصدار الفاتورة عند تسجيل المغادرة.
+0 = unlimited.,0 = غير محدود.
+1,1
+2,2
+3,3
+4,4
+5,5
+A late cancellation fee of {0} was added and invoiced.,تمت إضافة رسوم إلغاء متأخر بقيمة {0} وإصدار فاتورة بها.
+A percentage discount must be between 0 and 100,يجب أن تكون نسبة الخصم بين 0 و100
+"A percentage, or an amount in the reservation currency.",نسبة مئوية، أو مبلغ بعملة الحجز.
+A refund cannot be more than what the guest has paid,لا يمكن أن يتجاوز الاسترداد ما دفعه النزيل
+Account,الحساب
+Add,إضافة
+Add Charge,إضافة رسوم
+"Add money from the buttons on top (Receive Payment, Deposit, Refund), so a Payment Entry is made for every line.",أضف المبالغ من الأزرار بالأعلى (استلام دفعة، عربون، استرداد) ليتم إنشاء سند دفع لكل سطر.
+Address,العنوان
+Adults,البالغون
+Agent,وكيل
+Airport Pick-up,الاستقبال من المطار
+Amount,المبلغ
+Amount in Billing Currency,المبلغ بعملة الفاتورة
+Applicable To,ينطبق على
+Arrival,الوصول
+Arrivals and Departures,الوصول والمغادرة
+Available,متاحة
+Balance,الرصيد
+Balance: {0},الرصيد: {0}
+Bed & Breakfast,إقامة وإفطار
+Beds,الأسرّة
+Bill To,الفاتورة باسم
+Billed To,صدرت الفاتورة باسم
+Billing Currency,عملة الفاتورة
+Cancel Reservation,إلغاء الحجز
+Cancel this reservation?,هل تريد إلغاء هذا الحجز؟
+Cancellation,الإلغاء
+Cancellation Policy,سياسة الإلغاء
+Cancellation fee,رسوم الإلغاء
+Cancelled,ملغي
+Change,تغيير
+Change Dates,تغيير التواريخ
+Change Room,تغيير الغرفة
+Charges,الرسوم
+Charges Before Taxes,الرسوم قبل الضرائب
+Check In,تسجيل وصول
+Check Out,تسجيل مغادرة
+Check-in,تسجيل الوصول
+Check-out,تسجيل المغادرة
+Check-out must be after check-in,يجب أن يكون تسجيل المغادرة بعد تسجيل الوصول
+Checked In,مقيم
+Checked Out,غادر
+Children,الأطفال
+Choose the company or agent,اختر الشركة أو الوكيل
+City,المدينة
+Clean,نظيفة
+Closed,مغلق
+Code,الرمز
+Company,الشركة
+Company Currency,عملة الشركة
+Company or Agent,شركة أو وكيل
+Conditions,الشروط
+Confirm,تأكيد
+Confirmed,مؤكد
+Confirmed - room {0},مؤكد - غرفة {0}
+Corporate,شركات
+Corporate Invoice Day of Month,يوم الشهر لفواتير الشركات
+Cost Center,مركز التكلفة
+Create Corporate Invoices Now,إنشاء فواتير الشركات الآن
+Created automatically on install.,يتم إنشاؤه تلقائيًا عند التثبيت.
+Created {0} invoice(s): {1},تم إنشاء {0} فاتورة: {1}
+Currency,العملة
+Customer {0} has a receivable account that is not in the company currency. Hotel payments need the company-currency receivable account.,حساب المدينين للعميل {0} ليس بعملة الشركة. تتطلب مدفوعات الفندق حساب مدينين بعملة الشركة.
+Date,التاريخ
+Default Price,السعر الافتراضي
+Departure,المغادرة
+Deposit,عربون
+Deposit Required,العربون المطلوب
+Deposit Required (%),العربون المطلوب (%)
+Description,الوصف
+Direct,مباشر
+Dirty,متسخة
+Discount,خصم
+Discount Type,نوع الخصم
+Discount Value,قيمة الخصم
+Discount {0},خصم {0}
+Draft,مسودة
+Email,البريد الإلكتروني
+Enabled,مفعّل
+Enter at least one nightly rate,أدخل سعر ليلة واحدة على الأقل
+Flight,الرحلة
+Flight Number,رقم الرحلة
+Floor,الطابق
+Folio,حساب النزيل
+Folio Charge,رسوم حساب النزيل
+Folio Payment,دفعة حساب النزيل
+"For example: Cash EGP, Cash USD, Card EUR",مثال: نقدي جنيه، نقدي دولار، بطاقة يورو
+Free Cancellation Until (days before arrival),إلغاء مجاني حتى (عدد الأيام قبل الوصول)
+From,من
+Full Board,إقامة كاملة
+Guest,نزيل
+Guest Folio,حساب النزيل
+Half Board,نصف إقامة
+Home,الرئيسية
+Hotel,فندق
+Hotel Name,اسم الفندق
+Hotel Occupancy,إشغال الفندق
+Hotel Payment Method,طريقة دفع الفندق
+Hotel Promotion,عرض ترويجي للفندق
+Hotel Room,غرفة فندق
+Hotel Service Item,صنف خدمة الفندق
+Hotel Settings,إعدادات الفندق
+Hotel folio {0} - {1},حساب النزيل {0} - {1}
+Hotel folios: {0},حسابات النزلاء: {0}
+Hotels,الفنادق
+In the currency of the chosen method,بعملة الطريقة المختارة
+"In the service's own currency when a service is chosen, otherwise in {0}",بعملة الخدمة نفسها عند اختيار خدمة، وإلا فبعملة {0}
+Invoice,فاتورة
+Invoice {0} created.,تم إنشاء الفاتورة {0}.
+Key,المفتاح
+Late Cancellation Fee (% of the first night),رسوم الإلغاء المتأخر (% من الليلة الأولى)
+Laundry,المغسلة
+Leave empty for every company or agent.,اتركه فارغًا لجميع الشركات والوكلاء.
+Leave empty to use today's rate from Currency Exchange,اتركه فارغًا لاستخدام سعر اليوم من صرف العملات
+"Left empty, a free room of the type is assigned when you confirm.",إذا تُرك فارغًا، تُخصَّص غرفة شاغرة من هذا النوع عند التأكيد.
+Maintenance,صيانة
+Mark Clean,تحديد كنظيفة
+Mark Dirty,تحديد كمتسخة
+Mark the guest as a no-show? The first night is charged.,هل تريد تسجيل النزيل كـ «لم يحضر»؟ ستُحتسب الليلة الأولى.
+Max Adults,الحد الأقصى للبالغين
+Max Children,الحد الأقصى للأطفال
+Maximum Uses,الحد الأقصى للاستخدام
+Meal,وجبة
+Meal Plan,نظام الإقامة
+Method,الطريقة
+Minibar,ميني بار
+Minimum Nights,الحد الأدنى لعدد الليالي
+Mode of Payment,طريقة الدفع
+Money,المبالغ
+Movement,الحركة
+Night,ليلة
+Nightly Rates,أسعار الليالي
+Nights,الليالي
+No Show,لم يحضر
+No exchange rate from {0} to {1}. Add it in Currency Exchange.,لا يوجد سعر صرف من {0} إلى {1}. أضفه في صرف العملات.
+No free room of this type for these dates,لا توجد غرفة شاغرة من هذا النوع في هذه التواريخ
+No other free room of this type.,لا توجد غرفة شاغرة أخرى من هذا النوع.
+No rate plan covers these nights: {0},لا توجد خطة أسعار تغطي هذه الليالي: {0}
+Notes,ملاحظات
+Nothing is waiting to be billed.,لا يوجد ما ينتظر إصدار الفاتورة.
+Occupancy %,نسبة الإشغال %
+Occupied,مشغولة
+On this day the company invoices for last month's stays are created.,في هذا اليوم تُنشأ فواتير الشركات عن إقامات الشهر الماضي.
+Only draft or cancelled reservations can be deleted,يمكن حذف الحجوزات المسودة أو الملغاة فقط
+Only for Room Type,لنوع الغرفة فقط
+Only used to satisfy the invoice; the hotel sets every price itself.,يُستخدم فقط لاستيفاء متطلبات الفاتورة؛ فالفندق هو من يحدد كل الأسعار.
+Open,مفتوح
+Open Folio,فتح حساب النزيل
+Open Folios,حسابات النزلاء المفتوحة
+Open Invoice,فتح الفاتورة
+Open Reservation,فتح الحجز
+Other,أخرى
+Out of Order,خارج الخدمة
+Paid,مدفوع
+Payment,الدفع
+Payment Entry,سند دفع
+Payment method {0} is not available,طريقة الدفع {0} غير متاحة
+Payments,المدفوعات
+Percent,نسبة مئوية
+Phone,الهاتف
+Plan Currency,عملة الخطة
+Plan Name,اسم الخطة
+Plan Rate,سعر الخطة
+Price,السعر
+Price List,قائمة الأسعار
+Priority,الأولوية
+Promotion Code,رمز العرض الترويجي
+Promotion Counted,تم احتساب العرض الترويجي
+Public,عام
+Qty,الكمية
+Rate,السعر
+Rate Plan,خطة الأسعار
+Rate in Billing Currency,السعر بعملة الفاتورة
+Rate to Billing Currency,سعر التحويل إلى عملة الفاتورة
+Rate to Billing Currency (optional),سعر التحويل إلى عملة الفاتورة (اختياري)
+Receive Deposit,استلام عربون
+Receive Payment,استلام دفعة
+Reference,المرجع
+Refund,استرداد
+Reservation,حجز
+Reservation Night,ليلة الحجز
+Revenue,الإيرادات
+Room,غرفة
+Room Charges Posted,تم ترحيل رسوم الغرفة
+Room Night Item,صنف ليلة الغرفة
+Room Night Lock,قفل ليلة الغرفة
+Room Number,رقم الغرفة
+Room Only,إقامة فقط
+Room Revenue Account,حساب إيرادات الغرف
+Room Total,إجمالي الغرفة
+Room Type,نوع الغرفة
+Room and Plan,الغرفة والخطة
+Room night {0},ليلة الغرفة {0}
+Room {0} already exists in this hotel,الغرفة {0} موجودة بالفعل في هذا الفندق
+Room {0} is already taken for part of these dates,الغرفة {0} محجوزة بالفعل في جزء من هذه التواريخ
+Room {0} is not free for the new dates,الغرفة {0} غير شاغرة في التواريخ الجديدة
+Room {0} is not free for the remaining nights,الغرفة {0} غير شاغرة في الليالي المتبقية
+Room {0} is not free for these dates,الغرفة {0} غير شاغرة في هذه التواريخ
+Room {0} is under maintenance. Change the room first.,الغرفة {0} قيد الصيانة. غيّر الغرفة أولًا.
+Rooms,الغرف
+Sales Invoice,فاتورة مبيعات
+Save,حفظ
+Service,الخدمة
+Service Charge,رسوم الخدمة
+Service Charge (%),رسوم الخدمة (%)
+Service Charge Account,حساب رسوم الخدمة
+Services Item,صنف الخدمات
+Services Revenue Account,حساب إيرادات الخدمات
+Set {0} in Hotel Settings first,حدد {0} في إعدادات الفندق أولًا
+Share of the stay total asked as a deposit when a reservation is confirmed.,نسبة من إجمالي الإقامة تُطلب كعربون عند تأكيد الحجز.
+Source,المصدر
+Special Requests,طلبات خاصة
+Specific Company or Agent,شركة أو وكيل محدد
+Standard Check-in Time,وقت تسجيل الوصول القياسي
+Standard Check-out Time,وقت تسجيل المغادرة القياسي
+Stars,النجوم
+Status,الحالة
+Subject to Service Charge and Taxes,خاضع لرسوم الخدمة والضرائب
+Taxable,خاضع للضريبة
+Taxes and Service Charge,الضرائب ورسوم الخدمة
+The amount must be above zero,يجب أن يكون المبلغ أكبر من صفر
+The arrival date has not passed yet,لم يحن موعد الوصول بعد
+The cash or bank account (in this currency) that receives the money.,حساب النقدية أو البنك (بهذه العملة) الذي يستلم المبلغ.
+The currency of the guest's bill. The guest can still pay in any accepted currency.,عملة فاتورة النزيل. ويمكن للنزيل الدفع بأي عملة مقبولة.
+The discount value must be above zero,يجب أن تكون قيمة الخصم أكبر من صفر
+The folio is cancelled,حساب النزيل ملغي
+The folio is {0}: charges can no longer be added,حساب النزيل {0}: لا يمكن إضافة رسوم بعد الآن
+The guest arrives on {0}: it is not the day yet,يصل النزيل بتاريخ {0}: لم يحن اليوم بعد
+"The new room must be of the same room type. To change the type, cancel and book again.",يجب أن تكون الغرفة الجديدة من نفس نوع الغرفة. لتغيير النوع، ألغِ الحجز وأعد الحجز.
+The room has reservations from today onwards. Move them first.,للغرفة حجوزات من اليوم فصاعدًا. انقلها أولًا.
+The room is not of the chosen room type,الغرفة ليست من نوع الغرفة المختار
+The room type belongs to another hotel,نوع الغرفة تابع لفندق آخر
+The room type holds at most {0} adults and {1} children,يتسع نوع الغرفة لـ {0} بالغين و{1} أطفال كحد أقصى
+"The stay can no longer be edited here. Use Change Room or Change Dates, or cancel and book again.",لا يمكن تعديل الإقامة من هنا بعد الآن. استخدم تغيير الغرفة أو تغيير التواريخ، أو ألغِ الحجز وأعد الحجز.
+This reservation is {0},هذا الحجز {0}
+Times Used,مرات الاستخدام
+To,إلى
+To Bill,للفوترة
+Total,الإجمالي
+Total After Discount (before taxes),الإجمالي بعد الخصم (قبل الضرائب)
+Totals,الإجماليات
+Tourism Fee,رسوم سياحية
+Tourism Fee (%),الرسوم السياحية (%)
+Tourism Fee Account,حساب الرسوم السياحية
+Transfer and Folio,الانتقال وحساب النزيل
+Transport,النقل
+Type,النوع
+Unknown payment method,طريقة دفع غير معروفة
+Unknown payment type,نوع دفع غير معروف
+VAT,ضريبة القيمة المضافة
+VAT (%),ضريبة القيمة المضافة (%)
+VAT Account,حساب ضريبة القيمة المضافة
+VAT Also Applies to the Service Charge,تسري ضريبة القيمة المضافة على رسوم الخدمة أيضًا
+Valid From,صالح من
+Valid From (check-in),صالح من (تسجيل الوصول)
+Valid To,صالح حتى
+Valid To (check-in),صالح حتى (تسجيل الوصول)
+Valid To is before Valid From,تاريخ «صالح حتى» قبل تاريخ «صالح من»
+Vehicle,المركبة
+"Weekday numbers, Monday = 0. Default 3,4 = Thursday and Friday nights.","أرقام أيام الأسبوع، الاثنين = 0. الافتراضي 3,4 = ليلتا الخميس والجمعة."
+Weekend Increase (%),زيادة نهاية الأسبوع (%)
+Weekend Nights,ليالي نهاية الأسبوع
+Weekends,نهايات الأسبوع
+"When two plans fit the same night, the higher number wins.",عند انطباق خطتين على نفس الليلة، تُطبَّق الخطة ذات الرقم الأعلى.
+Who It Is For,الجهة المستفيدة
