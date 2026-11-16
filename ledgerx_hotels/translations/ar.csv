@@ -413,3 +413,14 @@ included,مشمول
 {0} is not checked in,{0} لم يتم تسجيل وصوله
 {0} is not sold at {1},{0} غير متاح للبيع في {1}
 {0} reservations created,تم إنشاء {0} حجوزات
+Arrivals Today,وصول اليوم
+Departures Today,مغادرة اليوم
+In-House Guests,النزلاء المقيمون
+Rooms to Clean,غرف تحتاج تنظيف
+Open Maintenance,صيانة مفتوحة
+Restaurant Orders Today,طلبات المطاعم اليوم
+Activity Bookings Today,حجوزات الأنشطة اليوم
+Reservations per Month,الحجوزات شهريًا
+Reservations by Status,الحجوزات حسب الحالة
+Rooms by Status,الغرف حسب الحالة
+Restaurant Orders per Month,طلبات المطاعم شهريًا

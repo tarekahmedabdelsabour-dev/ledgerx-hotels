@@ -22,7 +22,7 @@ def after_migrate():
 
 
 def _all():
-	for fn in (ensure_module, ensure_roles, ensure_items, ensure_settings):
+	for fn in (ensure_module, ensure_roles, ensure_items, ensure_settings, refresh_workspace):
 		try:
 			fn()
 			frappe.db.commit()
@@ -67,3 +67,16 @@ def ensure_settings():
 		changed = changed or bool(s.selling_price_list)
 	if changed and s.company:
 		s.save(ignore_permissions=True)
+
+
+def refresh_workspace():
+	"""Migrate only re-reads a workspace file that is newer than the saved one: force it, so new shortcuts, cards and charts always show."""
+	import os
+
+	base = os.path.join(frappe.get_app_path("ledgerx_hotels"), "hotels")
+	for dt in ("number_card", "dashboard_chart"):
+		folder = os.path.join(base, dt)
+		for name in sorted(os.listdir(folder)) if os.path.isdir(folder) else []:
+			if os.path.isdir(os.path.join(folder, name)):
+				frappe.reload_doc("hotels", dt, name, force=True)
+	frappe.reload_doc("hotels", "workspace", "hotels", force=True)

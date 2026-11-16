@@ -1,0 +1,20 @@
+{
+ "creation": "2026-11-16 12:30:00.000000",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Outlet Order",
+ "filters_json": "[[\"Outlet Order\", \"order_time\", \"Timespan\", \"today\"], [\"Outlet Order\", \"status\", \"!=\", \"Cancelled\"]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Restaurant Orders Today",
+ "modified": "2026-11-16 12:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Restaurant Orders Today",
+ "owner": "Administrator",
+ "show_percentage_stats": 0,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

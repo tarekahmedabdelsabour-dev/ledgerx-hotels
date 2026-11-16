@@ -1,7 +1,24 @@
 {
- "charts": [],
- "content": "[{\"id\": \"df6772243f\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Hotels</b></span>\", \"col\": 12}}, {\"id\": \"630f80218b\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reservation\", \"col\": 3}}, {\"id\": \"4cba1fcd6a\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Guest Folio\", \"col\": 3}}, {\"id\": \"f00e35dc81\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Room\", \"col\": 3}}, {\"id\": \"0985a021e7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Room Type\", \"col\": 3}}, {\"id\": \"5f9c0ba2fe\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel\", \"col\": 3}}, {\"id\": \"518ea96e12\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rate Plan\", \"col\": 3}}, {\"id\": \"70478999f5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Promotion\", \"col\": 3}}, {\"id\": \"8c43e2831f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Service Item\", \"col\": 3}}, {\"id\": \"a6ad88dee4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Payment Method\", \"col\": 3}}, {\"id\": \"f84bbfa4a5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Outlet\", \"col\": 3}}, {\"id\": \"b4817a1e3c\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Outlet Order\", \"col\": 3}}, {\"id\": \"c8148a4cd4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Activity\", \"col\": 3}}, {\"id\": \"54a214383e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Activity Session\", \"col\": 3}}, {\"id\": \"1b7a3ffadb\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Activity Booking\", \"col\": 3}}, {\"id\": \"33528cc80f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Group Booking\", \"col\": 3}}, {\"id\": \"877fdf57a9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Housekeeping Task\", \"col\": 3}}, {\"id\": \"4d894e8063\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Request\", \"col\": 3}}, {\"id\": \"81df2e5819\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Guest Request\", \"col\": 3}}, {\"id\": \"ee769273eb\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Settings\", \"col\": 3}}, {\"id\": \"27361d0cba\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Revenue by Department\", \"col\": 3}}, {\"id\": \"5204f450fd\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Arrivals and Departures\", \"col\": 3}}, {\"id\": \"9724dd9551\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Occupancy\", \"col\": 3}}, {\"id\": \"8a7c8aeb9e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Open Folios\", \"col\": 3}}]",
- "creation": "2026-11-16 08:00:00.000000",
+ "charts": [
+  {
+   "chart_name": "Reservations per Month",
+   "label": "Reservations per Month"
+  },
+  {
+   "chart_name": "Reservations by Status",
+   "label": "Reservations by Status"
+  },
+  {
+   "chart_name": "Rooms by Status",
+   "label": "Rooms by Status"
+  },
+  {
+   "chart_name": "Restaurant Orders per Month",
+   "label": "Restaurant Orders per Month"
+  }
+ ],
+ "content": "[{\"id\": \"7d466dd4bb\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Hotels</b></span>\", \"col\": 12}}, {\"id\": \"12da550246\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Arrivals Today\", \"col\": 3}}, {\"id\": \"fd74798c7d\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Departures Today\", \"col\": 3}}, {\"id\": \"c1596b1386\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"In-House Guests\", \"col\": 3}}, {\"id\": \"fa86e26478\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Folios\", \"col\": 3}}, {\"id\": \"e7b8311b2c\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Rooms to Clean\", \"col\": 3}}, {\"id\": \"ad307b737a\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Maintenance\", \"col\": 3}}, {\"id\": \"5ae96c4663\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Restaurant Orders Today\", \"col\": 3}}, {\"id\": \"2218c4c024\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Activity Bookings Today\", \"col\": 3}}, {\"id\": \"f038bc2133\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Reservations per Month\", \"col\": 6}}, {\"id\": \"6addd7f3ec\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Reservations by Status\", \"col\": 6}}, {\"id\": \"aac67dd8bc\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Rooms by Status\", \"col\": 6}}, {\"id\": \"842cfe94e2\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Restaurant Orders per Month\", \"col\": 6}}, {\"id\": \"9ddc787293\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reservation\", \"col\": 3}}, {\"id\": \"8208e94d92\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Guest Folio\", \"col\": 3}}, {\"id\": \"d21e6d1bc3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Room\", \"col\": 3}}, {\"id\": \"0b6004c78f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Room Type\", \"col\": 3}}, {\"id\": \"2678ffa1de\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel\", \"col\": 3}}, {\"id\": \"ff2a2f5c33\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rate Plan\", \"col\": 3}}, {\"id\": \"a8e1417dce\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Promotion\", \"col\": 3}}, {\"id\": \"3b4c23fab7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Service Item\", \"col\": 3}}, {\"id\": \"eeb1c13033\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Payment Method\", \"col\": 3}}, {\"id\": \"8940ba33df\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Outlet\", \"col\": 3}}, {\"id\": \"738322cd55\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Outlet Order\", \"col\": 3}}, {\"id\": \"6e7a46081d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Activity\", \"col\": 3}}, {\"id\": \"2e4cf52d18\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Activity Session\", \"col\": 3}}, {\"id\": \"06a096057d\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Activity Booking\", \"col\": 3}}, {\"id\": \"a627edcf80\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Group Booking\", \"col\": 3}}, {\"id\": \"567a84ad3a\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Housekeeping Task\", \"col\": 3}}, {\"id\": \"d52c4ebbc0\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Request\", \"col\": 3}}, {\"id\": \"1eb158e58f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Guest Request\", \"col\": 3}}, {\"id\": \"e3d8a251bc\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Settings\", \"col\": 3}}, {\"id\": \"b1110d1f20\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Revenue by Department\", \"col\": 3}}, {\"id\": \"c1e71c994e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Arrivals and Departures\", \"col\": 3}}, {\"id\": \"da32b113a8\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Occupancy\", \"col\": 3}}, {\"id\": \"34eb02173f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Open Folios\", \"col\": 3}}]",
+ "creation": "2026-11-16 12:30:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -12,11 +29,45 @@
  "is_hidden": 0,
  "label": "Hotels",
  "links": [],
- "modified": "2026-11-16 08:00:00.000000",
+ "title": "Hotels",
+ "modified": "2026-11-16 12:30:00.000000",
  "modified_by": "Administrator",
  "module": "Hotels",
  "name": "Hotels",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Arrivals Today",
+   "number_card_name": "Arrivals Today"
+  },
+  {
+   "label": "Departures Today",
+   "number_card_name": "Departures Today"
+  },
+  {
+   "label": "In-House Guests",
+   "number_card_name": "In-House Guests"
+  },
+  {
+   "label": "Open Folios",
+   "number_card_name": "Open Folios"
+  },
+  {
+   "label": "Rooms to Clean",
+   "number_card_name": "Rooms to Clean"
+  },
+  {
+   "label": "Open Maintenance",
+   "number_card_name": "Open Maintenance"
+  },
+  {
+   "label": "Restaurant Orders Today",
+   "number_card_name": "Restaurant Orders Today"
+  },
+  {
+   "label": "Activity Bookings Today",
+   "number_card_name": "Activity Bookings Today"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,

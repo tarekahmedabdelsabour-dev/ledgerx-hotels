@@ -1,0 +1,20 @@
+{
+ "creation": "2026-11-16 12:30:00.000000",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Reservation",
+ "filters_json": "[[\"Reservation\", \"status\", \"=\", \"Checked In\"]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "In-House Guests",
+ "modified": "2026-11-16 12:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "In-House Guests",
+ "owner": "Administrator",
+ "show_percentage_stats": 0,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

@@ -1,0 +1,20 @@
+{
+ "creation": "2026-11-16 12:30:00.000000",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Reservation",
+ "filters_json": "[[\"Reservation\", \"check_in\", \"Timespan\", \"today\"], [\"Reservation\", \"status\", \"in\", [\"Confirmed\", \"Checked In\"]]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Arrivals Today",
+ "modified": "2026-11-16 12:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Arrivals Today",
+ "owner": "Administrator",
+ "show_percentage_stats": 0,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}
