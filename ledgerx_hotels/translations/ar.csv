@@ -271,3 +271,145 @@ Weekend Nights,ليالي نهاية الأسبوع
 Weekends,نهايات الأسبوع
 "When two plans fit the same night, the higher number wins.",عند انطباق خطتين على نفس الليلة، تُطبَّق الخطة ذات الرقم الأعلى.
 Who It Is For,الجهة المستفيدة
+Activities,الأنشطة
+Activities Revenue Account,حساب إيراد الأنشطة
+Activities and Services,الأنشطة والخدمات
+Activities and Services are switched off in Hotel Settings,الأنشطة والخدمات متوقفة في إعدادات الفندق
+Activity,نشاط
+Activity Booking,حجز نشاط
+Activity Session,حصة نشاط
+Add at least one item,أضف صنفًا واحدًا على الأقل
+Adults per Room,البالغون لكل غرفة
+All Inclusive,شامل كل شيء
+Any,أي
+Area (when it is not a room),المكان (إذا لم يكن غرفة)
+Assigned To,مسند إلى
+Booked,محجوز
+Booked\nCancelled,محجوز\nملغي
+Breakfast,إفطار
+Cancel Booking,إلغاء الحجز
+Cancel Group,إلغاء المجموعة
+Cancel Order,إلغاء الطلب
+Cancel every room of this group?,هل تريد إلغاء كل غرف هذه المجموعة؟
+Cancel this booking?,هل تريد إلغاء هذا الحجز؟
+Cancel this order?,هل تريد إلغاء هذا الطلب؟
+Capacity,السعة
+Category,الفئة
+Children per Room,الأطفال لكل غرفة
+"Choose the room first, or take payment on the spot",اختر الغرفة أولًا، أو حصّل الدفع فورًا
+Choose the room or write the area,اختر الغرفة أو اكتب المكان
+Cleaning After Departure\nDaily Cleaning\nTurndown\nInspection\nDeep Clean,تنظيف بعد المغادرة\nتنظيف يومي\nتجهيز المساء\nتفتيش\nتنظيف عميق
+Confirm All Rooms,تأكيد كل الغرف
+Corporate\nAgent,شركة\nوكيل
+Covered by the Plan,مغطى بالباقة
+Create Reservations,إنشاء الحجوزات
+Create the reservations first,أنشئ الحجوزات أولًا
+Customer for Walk-in Sales,العميل لمبيعات غير المقيمين
+Default Capacity,السعة الافتراضية
+Department,قسم
+Departments,الأقسام
+Details,التفاصيل
+Dinner,عشاء
+Draft\nRooms Created\nConfirmed\nCancelled,مسودة\nتم إنشاء الغرف\nمؤكد\nملغي
+Drink,مشروبات
+Duration (minutes),المدة (بالدقائق)
+Empty: the department account in Hotel Settings.,إذا ترك فارغًا: يُستخدم حساب القسم في إعدادات الفندق.
+Food and Beverage,الأغذية والمشروبات
+Food and Beverage Revenue Account,حساب إيراد الأغذية والمشروبات
+Free for All Inclusive Guests,مجاني لنزلاء الشامل كل شيء
+Group,مجموعة
+Group Booking,حجز مجموعة
+Group Booking Line,سطر حجز المجموعة
+Group Bookings,حجوزات المجموعات
+Group Bookings are switched off in Hotel Settings,حجوزات المجموعات متوقفة في إعدادات الفندق
+Guest Request,طلب نزيل
+Hotel Activity,نشاط الفندق
+Housekeeping Task,مهمة تنظيف
+Housekeeping and Maintenance,التنظيف والصيانة
+Included in the Plan,مشمول في الباقة
+Item,صنف
+Items,الأصناف
+Leave empty for someone who is not staying: they pay on the spot.,اتركه فارغًا لغير المقيم: يدفع فورًا.
+Lines,السطور
+Low\nNormal\nHigh\nUrgent,منخفضة\nعادية\nعالية\nعاجلة
+Lunch,غداء
+Maintenance Request,طلب صيانة
+Meal Period,وجبة
+Meal Plans Are Served Here,تُقدَّم باقات الوجبات هنا
+Name on the Room,الاسم على الغرفة
+Only {0} seats left in this session,تبقّى {0} مقاعد فقط في هذه الحصة
+Open\nClosed\nCancelled,مفتوح\nمغلق\nملغي
+Open\nDone,مفتوح\nتم
+Open\nIn Progress\nClosed,مفتوح\nقيد التنفيذ\nمغلق
+Open\nIn Progress\nDone,مفتوح\nقيد التنفيذ\nتم
+Open\nPosted to Room\nPaid\nCancelled,مفتوح\nتم التحميل على الغرفة\nمدفوع\nملغي
+Optional: issued from the outlet's warehouse when sold.,اختياري: يُصرف من مخزن المنفذ عند البيع.
+Order,طلب
+Outcome,النتيجة
+Outlet,منفذ بيع
+Outlet Order,طلب
+Outlet Order Item,صنف الطلب
+Outlet order {0},طلب {0}
+Outlets and orders posted to the room.,منافذ البيع والطلبات المحمّلة على الغرفة.
+Pay Now,الدفع الآن
+Persons,عدد الأفراد
+Persons at the Table,عدد الأفراد على الطاولة
+Persons must be at least 1,يجب ألا يقل عدد الأفراد عن 1
+"Pool, beach, spa, trips: sessions with a limited capacity.",المسبح والشاطئ والسبا والرحلات: حصص ذات سعة محدودة.
+Pool\nBeach\nWater Sports\nSpa\nSports\nTrip\nEntertainment\nKids\nOther,المسبح\nالشاطئ\nالرياضات المائية\nسبا\nالرياضة\nرحلة\nالترفيه\nالأطفال\nأخرى
+Post to Room,تحميل على الغرفة
+Price per Person,السعر للفرد
+Problem,المشكلة
+Receive,استلام
+Received {0} {1}. Invoice {2}.,تم استلام {0} {1}. الفاتورة {2}.
+Request\nComplaint\nLost and Found\nCompliment,طلب\nشكوى\nمفقودات\nإشادة
+Reservations,الحجوزات
+Restaurant\nCafe\nBar\nPool Bar\nBeach\nSpa\nShop\nOther,مطعم\nكافيه\nبار\nبار المسبح\nالشاطئ\nسبا\nمحل\nأخرى
+Restaurants and Bars,المطاعم والبارات
+Restaurants and Bars are switched off in Hotel Settings,المطاعم والبارات متوقفة في إعدادات الفندق
+Revenue Account,حساب الإيراد
+Revenue Before Taxes,الإيراد قبل الضرائب
+Revenue by Department,الإيراد حسب القسم
+Room (Checked-in Reservation),الغرفة (حجز تم تسجيل وصوله)
+Room Only\nBed & Breakfast\nHalf Board\nFull Board\nAll Inclusive,غرفة فقط\nمبيت وإفطار\nنصف إقامة\nإقامة كاملة\nشامل كل شيء
+Rooms Needed,الغرف المطلوبة
+Rooms of the Group,غرف المجموعة
+Session,حصة
+Set the Customer for Walk-in Sales in Hotel Settings first,حدد العميل لمبيعات غير المقيمين في إعدادات الفندق أولًا
+Snack,وجبة خفيفة
+Start,البداية
+Stock Item,صنف مخزني
+Stock Quantity per Unit,كمية المخزون لكل وحدة
+Table,طاولة
+Take the Room Out of Service Until Done,إخراج الغرفة من الخدمة حتى الانتهاء
+Task,مهمة
+The booking is already paid: cancel the invoice first,الحجز مدفوع بالفعل: ألغِ الفاتورة أولًا
+The booking is {0},حالة الحجز: {0}
+"The currency of the bill (the room's, or the one the customer pays in).",عملة الفاتورة (عملة الغرفة، أو العملة التي يدفع بها العميل).
+The folio is {0}: the charge can no longer be removed,حالة حساب النزيل: {0}، ولا يمكن حذف الرسوم بعد الآن
+The group is {0},حالة المجموعة: {0}
+The guest's folio is {0},حالة حساب النزيل: {0}
+The meal plans that already include this period give it free to the guest.,الباقات التي تشمل هذه الوجبة أصلًا تقدمها للنزيل مجانًا.
+The order is {0},حالة الطلب: {0}
+The order is {0} and can no longer be changed,حالة الطلب: {0}، ولا يمكن تعديله بعد الآن
+The outlet is not enabled,منفذ البيع غير مفعّل
+The session date has passed,انتهى تاريخ الحصة
+The session is {0},حالة الحصة: {0}
+"The spa, beach or pool that runs it (for the revenue account and cost center).",السبا أو الشاطئ أو المسبح الذي يديره (لحساب الإيراد ومركز التكلفة).
+This booking is not waiting for payment,هذا الحجز لا ينتظر الدفع
+This order belongs to a room: post it to the room,هذا الطلب تابع لغرفة: حمّله على الغرفة
+Time,الوقت
+Total Rooms,إجمالي الغرف
+Untick for a paid à la carte restaurant: guests on half board or all inclusive pay there.,ألغِ التحديد لمطعم بالقائمة مدفوع: نزلاء نصف الإقامة أو الشامل كل شيء يدفعون هناك.
+Used for meals the plan already includes.,يُستخدم للوجبات التي تشملها الباقة أصلًا.
+Used when a restaurant or an activity is paid on the spot by someone who is not staying.,يُستخدم عندما يدفع غير المقيم فورًا ثمن مطعم أو نشاط.
+Warehouse,مخزن
+What Was Done,ما تم تنفيذه
+Where stock items sold here are issued from.,المخزن الذي تُصرف منه الأصناف المخزنية المباعة هنا.
+Who Pays,الجهة الدافعة
+Who really sleeps in the room (for groups and companies).,من يقيم فعليًا في الغرفة (للمجموعات والشركات).
+included,مشمول
+{0} is already in the hotel,{0} موجود بالفعل في الفندق
+{0} is not checked in,{0} لم يتم تسجيل وصوله
+{0} is not sold at {1},{0} غير متاح للبيع في {1}
+{0} reservations created,تم إنشاء {0} حجوزات

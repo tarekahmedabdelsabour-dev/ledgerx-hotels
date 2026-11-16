@@ -31,7 +31,16 @@
   "free_cancel_days",
   "cancel_fee_pct",
   "cb4",
-  "corporate_billing_day"
+  "corporate_billing_day",
+  "sb_dept",
+  "enable_fb",
+  "enable_activities",
+  "enable_groups",
+  "enable_operations",
+  "cb5",
+  "fb_income_account",
+  "activities_income_account",
+  "walkin_customer"
  ],
  "fields": [
   {
@@ -198,6 +207,60 @@
    "label": "Corporate Invoice Day of Month",
    "default": 1,
    "description": "On this day the company invoices for last month's stays are created."
+  },
+  {
+   "fieldname": "sb_dept",
+   "fieldtype": "Section Break",
+   "label": "Departments"
+  },
+  {
+   "fieldname": "enable_fb",
+   "fieldtype": "Check",
+   "label": "Restaurants and Bars",
+   "default": 1,
+   "description": "Outlets and orders posted to the room."
+  },
+  {
+   "fieldname": "enable_activities",
+   "fieldtype": "Check",
+   "label": "Activities and Services",
+   "default": 1,
+   "description": "Pool, beach, spa, trips: sessions with a limited capacity."
+  },
+  {
+   "fieldname": "enable_groups",
+   "fieldtype": "Check",
+   "label": "Group Bookings",
+   "default": 1
+  },
+  {
+   "fieldname": "enable_operations",
+   "fieldtype": "Check",
+   "label": "Housekeeping and Maintenance",
+   "default": 1
+  },
+  {
+   "fieldname": "cb5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fb_income_account",
+   "fieldtype": "Link",
+   "label": "Food and Beverage Revenue Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "activities_income_account",
+   "fieldtype": "Link",
+   "label": "Activities Revenue Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "walkin_customer",
+   "fieldtype": "Link",
+   "label": "Customer for Walk-in Sales",
+   "options": "Customer",
+   "description": "Used when a restaurant or an activity is paid on the spot by someone who is not staying."
   }
  ],
  "links": [],

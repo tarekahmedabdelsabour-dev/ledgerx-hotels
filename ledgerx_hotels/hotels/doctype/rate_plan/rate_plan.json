@@ -24,6 +24,7 @@
   "cb3",
   "rate_hb",
   "rate_fb",
+  "rate_ai",
   "sb_wk",
   "weekend_uplift_pct",
   "weekend_days"
@@ -154,6 +155,12 @@
    "fieldname": "rate_fb",
    "fieldtype": "Currency",
    "label": "Full Board",
+   "options": "currency"
+  },
+  {
+   "fieldname": "rate_ai",
+   "fieldtype": "Currency",
+   "label": "All Inclusive",
    "options": "currency"
   },
   {

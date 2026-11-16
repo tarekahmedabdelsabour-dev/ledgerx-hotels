@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"3d7cef36fb\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Hotels</b></span>\", \"col\": 12}}, {\"id\": \"c0c814ee0e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reservation\", \"col\": 3}}, {\"id\": \"fd67cac257\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Guest Folio\", \"col\": 3}}, {\"id\": \"a9048aba19\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Room\", \"col\": 3}}, {\"id\": \"034df10f4a\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Room Type\", \"col\": 3}}, {\"id\": \"a5eb4c19f1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel\", \"col\": 3}}, {\"id\": \"fcfbe7b6e1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rate Plan\", \"col\": 3}}, {\"id\": \"c0447d4dd4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Promotion\", \"col\": 3}}, {\"id\": \"4135dfb463\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Service Item\", \"col\": 3}}, {\"id\": \"69026d62c4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Payment Method\", \"col\": 3}}, {\"id\": \"138a246f03\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Settings\", \"col\": 3}}, {\"id\": \"eb01f7e469\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Arrivals and Departures\", \"col\": 3}}, {\"id\": \"306195d20c\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Occupancy\", \"col\": 3}}, {\"id\": \"8150fcd900\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Open Folios\", \"col\": 3}}]",
+ "content": "[{\"id\": \"df6772243f\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Hotels</b></span>\", \"col\": 12}}, {\"id\": \"630f80218b\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Reservation\", \"col\": 3}}, {\"id\": \"4cba1fcd6a\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Guest Folio\", \"col\": 3}}, {\"id\": \"f00e35dc81\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Room\", \"col\": 3}}, {\"id\": \"0985a021e7\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Room Type\", \"col\": 3}}, {\"id\": \"5f9c0ba2fe\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel\", \"col\": 3}}, {\"id\": \"518ea96e12\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Rate Plan\", \"col\": 3}}, {\"id\": \"70478999f5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Promotion\", \"col\": 3}}, {\"id\": \"8c43e2831f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Service Item\", \"col\": 3}}, {\"id\": \"a6ad88dee4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Payment Method\", \"col\": 3}}, {\"id\": \"f84bbfa4a5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Outlet\", \"col\": 3}}, {\"id\": \"b4817a1e3c\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Outlet Order\", \"col\": 3}}, {\"id\": \"c8148a4cd4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Activity\", \"col\": 3}}, {\"id\": \"54a214383e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Activity Session\", \"col\": 3}}, {\"id\": \"1b7a3ffadb\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Activity Booking\", \"col\": 3}}, {\"id\": \"33528cc80f\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Group Booking\", \"col\": 3}}, {\"id\": \"877fdf57a9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Housekeeping Task\", \"col\": 3}}, {\"id\": \"4d894e8063\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Maintenance Request\", \"col\": 3}}, {\"id\": \"81df2e5819\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Guest Request\", \"col\": 3}}, {\"id\": \"ee769273eb\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Settings\", \"col\": 3}}, {\"id\": \"27361d0cba\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Revenue by Department\", \"col\": 3}}, {\"id\": \"5204f450fd\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Arrivals and Departures\", \"col\": 3}}, {\"id\": \"9724dd9551\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Hotel Occupancy\", \"col\": 3}}, {\"id\": \"8a7c8aeb9e\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Open Folios\", \"col\": 3}}]",
  "creation": "2026-11-16 08:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
@@ -79,10 +79,69 @@
    "doc_view": "List"
   },
   {
+   "label": "Outlet",
+   "link_to": "Outlet",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Outlet Order",
+   "link_to": "Outlet Order",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Hotel Activity",
+   "link_to": "Hotel Activity",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Activity Session",
+   "link_to": "Activity Session",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Activity Booking",
+   "link_to": "Activity Booking",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Group Booking",
+   "link_to": "Group Booking",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Housekeeping Task",
+   "link_to": "Housekeeping Task",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Maintenance Request",
+   "link_to": "Maintenance Request",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Guest Request",
+   "link_to": "Guest Request",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
    "label": "Hotel Settings",
    "link_to": "Hotel Settings",
    "type": "DocType",
    "doc_view": "List"
+  },
+  {
+   "label": "Revenue by Department",
+   "link_to": "Revenue by Department",
+   "type": "Report"
   },
   {
    "label": "Arrivals and Departures",

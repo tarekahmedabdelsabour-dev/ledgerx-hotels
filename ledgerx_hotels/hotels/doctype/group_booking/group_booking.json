@@ -1,0 +1,177 @@
+{
+ "actions": [],
+ "creation": "2026-11-16 08:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "group_name",
+  "customer",
+  "hotel",
+  "status",
+  "cb1",
+  "check_in",
+  "check_out",
+  "meal_plan",
+  "currency",
+  "source",
+  "sb_lines",
+  "lines",
+  "notes",
+  "sb_res",
+  "total_rooms"
+ ],
+ "fields": [
+  {
+   "fieldname": "group_name",
+   "fieldtype": "Data",
+   "label": "Group",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Company or Agent",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "hotel",
+   "fieldtype": "Link",
+   "label": "Hotel",
+   "options": "Hotel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\\nRooms Created\\nConfirmed\\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "check_in",
+   "fieldtype": "Date",
+   "label": "Check-in",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "check_out",
+   "fieldtype": "Date",
+   "label": "Check-out",
+   "reqd": 1
+  },
+  {
+   "fieldname": "meal_plan",
+   "fieldtype": "Select",
+   "label": "Meal Plan",
+   "options": "Room Only\\nBed & Breakfast\\nHalf Board\\nFull Board\\nAll Inclusive",
+   "default": "Bed & Breakfast",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Billing Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Source",
+   "options": "Corporate\\nAgent",
+   "default": "Agent"
+  },
+  {
+   "fieldname": "sb_lines",
+   "fieldtype": "Section Break",
+   "label": "Rooms Needed"
+  },
+  {
+   "fieldname": "lines",
+   "fieldtype": "Table",
+   "label": "Rooms",
+   "options": "Group Booking Line",
+   "reqd": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "sb_res",
+   "fieldtype": "Section Break",
+   "label": "Reservations"
+  },
+  {
+   "fieldname": "total_rooms",
+   "fieldtype": "Int",
+   "label": "Total Rooms",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-16 08:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Group Booking",
+ "owner": "Administrator",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "permissions": [
+  {
+   "role": "Hotel Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Hotel Front Desk",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Hotel Accountant",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  }
+ ],
+ "autoname": "GRP-.YYYY.-.####",
+ "title_field": "group_name",
+ "icon": "fa fa-users",
+ "track_changes": 1,
+ "allow_rename": 0
+}

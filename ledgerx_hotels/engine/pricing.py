@@ -6,7 +6,7 @@ from frappe.utils import flt
 from ledgerx_hotels.engine import currency, logic
 
 PLAN_FIELDS = ["name", "valid_from", "valid_to", "currency", "applicable_to", "party", "priority", "min_nights",
-	"rate_room_only", "rate_bb", "rate_hb", "rate_fb", "weekend_uplift_pct", "weekend_days"]
+	"rate_room_only", "rate_bb", "rate_hb", "rate_fb", "rate_ai", "weekend_uplift_pct", "weekend_days"]
 
 
 def load_plans(hotel, room_type, check_in, check_out):

@@ -81,6 +81,22 @@ class T(unittest.TestCase):
 		self.assertEqual(L.cancellation_fee(100, 1, 3, 100), 100.0)
 		self.assertEqual(L.cancellation_fee(100, 0, 3, 50), 50.0)
 
+	def test_included_meals(self):
+		# half board, 2 guests: breakfast and dinner are covered once per person, lunch never
+		self.assertEqual(L.included_qty("Half Board", "Breakfast", 2, 2, 0), 2.0)
+		self.assertEqual(L.included_qty("Half Board", "Breakfast", 3, 2, 0), 2.0)
+		self.assertEqual(L.included_qty("Half Board", "Breakfast", 1, 2, 2), 0.0)
+		self.assertEqual(L.included_qty("Half Board", "Lunch", 1, 2, 0), 0.0)
+		self.assertEqual(L.included_qty("Room Only", "Breakfast", 1, 2, 0), 0.0)
+		self.assertEqual(L.included_qty("All Inclusive", "Drink", 9, 2, 50), 9.0)
+		self.assertEqual(L.included_qty("All Inclusive", "Dinner", 1, 2, 1), 1.0)
+		self.assertEqual(L.included_qty("All Inclusive", "Dinner", 2, 2, 1), 1.0)
+		self.assertEqual(L.included_qty("All Inclusive", "Dinner", 1, 2, 0, outlet_included=False), 0.0)
+
+	def test_all_inclusive_price(self):
+		p = dict(SUMMER, rate_ai=250)
+		self.assertEqual(L.price_stay([p], "2026-07-01", "2026-07-02", "All Inclusive")[0]["rate"], 250.0)
+
 
 if __name__ == "__main__":
 	unittest.main()

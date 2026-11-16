@@ -7,7 +7,19 @@ MEAL_FIELDS = {
 	"Bed & Breakfast": "rate_bb",
 	"Half Board": "rate_hb",
 	"Full Board": "rate_fb",
+	"All Inclusive": "rate_ai",
 }
+
+# Meal periods each plan already pays for. A guest has one included meal per period per person per day;
+# snacks and drinks (all inclusive) are unlimited.
+PLAN_PERIODS = {
+	"Room Only": (),
+	"Bed & Breakfast": ("Breakfast",),
+	"Half Board": ("Breakfast", "Dinner"),
+	"Full Board": ("Breakfast", "Lunch", "Dinner"),
+	"All Inclusive": ("Breakfast", "Lunch", "Dinner", "Snack", "Drink"),
+}
+UNLIMITED_PERIODS = ("Snack", "Drink")
 
 
 def to_date(v):
@@ -156,3 +168,15 @@ def cancellation_fee(first_night_rate, days_before, free_days, fee_pct):
 def overlaps(a_in, a_out, b_in, b_out):
 	"""Two stays overlap when each starts before the other leaves (leaving day is free for the next guest)."""
 	return to_date(a_in) < to_date(b_out) and to_date(b_in) < to_date(a_out)
+
+
+def included_qty(meal_plan, period, qty, persons, used_today, outlet_included=True):
+	"""How many of `qty` ordered units of a meal period the guest's plan already covers today.
+	persons = guests in the room; used_today = units of this period already given free today."""
+	if not outlet_included or period not in PLAN_PERIODS.get(meal_plan, ()):
+		return 0.0
+	qty = float(qty or 0)
+	if period in UNLIMITED_PERIODS:
+		return qty
+	left = max(float(persons or 1) - float(used_today or 0), 0.0)
+	return min(qty, left)

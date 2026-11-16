@@ -20,6 +20,7 @@ add_to_apps_screen = [
 scheduler_events = {
 	"cron": {
 		"0 5 * * *": ["ledgerx_hotels.tasks.bill_corporate_daily"],
+		"30 6 * * *": ["ledgerx_hotels.tasks.daily_cleaning"],
 	},
 }
 

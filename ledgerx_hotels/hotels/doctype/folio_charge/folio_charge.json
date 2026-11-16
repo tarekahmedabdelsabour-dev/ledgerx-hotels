@@ -6,7 +6,12 @@
  "field_order": [
   "charge_date",
   "charge_type",
+  "department",
+  "outlet",
   "description",
+  "included",
+  "meal_period",
+  "source_ref",
   "service_item",
   "qty",
   "rate",
@@ -25,15 +30,46 @@
    "fieldname": "charge_type",
    "fieldtype": "Select",
    "label": "Type",
-   "options": "Room\nMeal\nService\nCancellation\nOther",
+   "options": "Room\nMeal\nService\nActivity\nCancellation\nOther",
    "default": "Service",
    "in_list_view": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "label": "Department",
+   "options": "Rooms\nFood and Beverage\nActivities\nOther",
+   "default": "Other"
+  },
+  {
+   "fieldname": "outlet",
+   "fieldtype": "Link",
+   "label": "Outlet",
+   "options": "Outlet"
   },
   {
    "fieldname": "description",
    "fieldtype": "Data",
    "label": "Description",
    "in_list_view": 1
+  },
+  {
+   "fieldname": "included",
+   "fieldtype": "Check",
+   "label": "Included in the Plan"
+  },
+  {
+   "fieldname": "meal_period",
+   "fieldtype": "Select",
+   "label": "Meal Period",
+   "options": "\nBreakfast\nLunch\nDinner\nSnack\nDrink",
+   "hidden": 1
+  },
+  {
+   "fieldname": "source_ref",
+   "fieldtype": "Data",
+   "label": "Source",
+   "read_only": 1
   },
   {
    "fieldname": "service_item",

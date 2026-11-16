@@ -10,7 +10,6 @@ from frappe.utils import flt, nowdate
 
 from ledgerx_hotels.engine import currency, logic
 
-ROOM_TYPES = ("Room", "Meal")
 
 
 def settings():
@@ -70,22 +69,38 @@ def create_payment_entry(folio, row):
 
 
 # ------------------------------------------------------------------------------------------------ invoice
+def _department_account(s, charge, outlet, company):
+	"""Revenue account: the outlet's own, else the department's, else the company default."""
+	dept = charge.get("department") or "Other"
+	acc = None
+	if dept == "Rooms":
+		acc = s.room_income_account
+	elif dept == "Food and Beverage":
+		acc = (outlet and outlet.income_account) or s.fb_income_account
+	elif dept == "Activities":
+		acc = (outlet and outlet.income_account) or s.activities_income_account
+	return acc or s.service_income_account or s.room_income_account or frappe.get_cached_value("Company", company, "default_income_account")
+
+
 def _item_rows(folio, s):
-	"""Invoice lines for one folio: room nights grouped by rate, everything else line by line."""
+	"""Invoice lines for one folio: room nights grouped by rate, everything else line by line.
+	Charges the meal plan already covers (rate 0) are not invoiced."""
 	rows, room = [], {}
-	room_acc = s.room_income_account or frappe.get_cached_value("Company", folio.company, "default_income_account")
-	svc_acc = s.service_income_account or room_acc
 	for c in folio.charges:
-		if c.charge_type in ROOM_TYPES:
-			k = (c.charge_type, flt(c.rate))
-			room.setdefault(k, 0.0)
-			room[k] += flt(c.qty)
+		if c.get("included") or (flt(c.rate) == 0 and flt(c.amount) == 0):
+			continue
+		outlet = frappe.db.get_value("Outlet", c.outlet, ["income_account", "cost_center"], as_dict=True) if c.get("outlet") else None
+		acc = _department_account(s, c, outlet, folio.company)
+		cc = (outlet and outlet.cost_center) or s.cost_center
+		if c.charge_type == "Room":
+			room.setdefault((flt(c.rate), acc, cc), 0.0)
+			room[(flt(c.rate), acc, cc)] += flt(c.qty)
 		else:
 			rows.append({"item_code": _need(s, "service_item", "Services Item"), "qty": flt(c.qty), "rate": flt(c.rate),
-				"description": f"{c.description or c.charge_type} ({folio.name})", "income_account": svc_acc})
-	for (typ, rate), qty in room.items():
+				"description": f"{c.description or c.charge_type} ({folio.name})", "income_account": acc, "cost_center": cc})
+	for (rate, acc, cc), qty in room.items():
 		rows.insert(0, {"item_code": _need(s, "room_item", "Room Night Item"), "qty": qty, "rate": rate,
-			"description": f"{_(typ)} - {folio.name}", "income_account": room_acc})
+			"description": f"{_('Room')} - {folio.name}", "income_account": acc, "cost_center": cc})
 	return rows
 
 
@@ -106,7 +121,7 @@ def build_invoice(customer, folios, currency_code):
 	service = vat = fee = 0.0
 	for f in folios:
 		for r in _item_rows(f, s):
-			if s.cost_center:
+			if not r.get("cost_center") and s.cost_center:
 				r["cost_center"] = s.cost_center
 			inv.append("items", r)
 		service += flt(f.service_charge)
@@ -159,3 +174,25 @@ def bill_corporate(today=None):
 def bill_corporate_now():
 	frappe.only_for(["Hotel Manager", "Hotel Accountant", "System Manager"])
 	return bill_corporate()
+
+
+def sell_now(customer, currency_code, lines, tag, method, company=None):
+	"""A sale to someone who is not staying: invoice now and receive the money at once in `method`'s currency.
+	lines: dicts with description, qty, rate, taxable, department, outlet. Returns (invoice, amount paid, method currency)."""
+	s = settings()
+	company = company or s.company
+	taxable = sum(flt(l["qty"]) * flt(l["rate"]) for l in lines if l.get("taxable", 1))
+	net = sum(flt(l["qty"]) * flt(l["rate"]) for l in lines)
+	tx = logic.taxes(taxable, s.service_rate, s.vat_rate, s.fee_rate, bool(s.vat_on_service))
+	pseudo = frappe._dict(name=tag, company=company, currency=currency_code, service_charge=tx["service"], vat=tx["vat"], tourism_fee=tx["fee"],
+		charges=[frappe._dict(charge_type="Service", department=l.get("department") or "Other", outlet=l.get("outlet"), description=l["description"],
+			qty=flt(l["qty"]), rate=flt(l["rate"]), amount=logic.r2(flt(l["qty"]) * flt(l["rate"])), included=0) for l in lines])
+	inv = build_invoice(customer, [pseudo], currency_code)
+	total = logic.r2(net + tx["service"] + tx["vat"] + tx["fee"])
+	m = frappe.db.get_value("Hotel Payment Method", method, ["currency"], as_dict=True)
+	to_method = currency.rate(currency_code, m.currency, nowdate())
+	amount = logic.convert(total, to_method)
+	row = frappe._dict(idx=1, payment_type="Payment", payment_date=nowdate(), method=method, amount=amount, amount_in_folio_currency=total)
+	folio = frappe._dict(name=tag, company=company, bill_to_customer=customer, guest=customer, sales_invoice=inv, currency=currency_code)
+	create_payment_entry(folio, row)
+	return inv, amount, m.currency

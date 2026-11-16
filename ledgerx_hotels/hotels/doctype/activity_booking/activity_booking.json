@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "creation": "2026-11-16 08:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "session",
+  "activity",
+  "session_date",
+  "cb1",
+  "status",
+  "persons",
+  "currency",
+  "sb_who",
+  "reservation",
+  "guest_name",
+  "cb2",
+  "total",
+  "included",
+  "sales_invoice",
+  "folio"
+ ],
+ "fields": [
+  {
+   "fieldname": "session",
+   "fieldtype": "Link",
+   "label": "Session",
+   "options": "Activity Session",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "activity",
+   "fieldtype": "Link",
+   "label": "Activity",
+   "options": "Hotel Activity",
+   "fetch_from": "session.activity",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "session_date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "fetch_from": "session.session_date",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Booked\\nCancelled",
+   "default": "Booked",
+   "read_only": 1,
+   "in_list_view": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "persons",
+   "fieldtype": "Int",
+   "label": "Persons",
+   "default": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_who",
+   "fieldtype": "Section Break",
+   "label": "Who Pays"
+  },
+  {
+   "fieldname": "reservation",
+   "fieldtype": "Link",
+   "label": "Room (Checked-in Reservation)",
+   "options": "Reservation",
+   "description": "Leave empty for someone who is not staying: they pay on the spot."
+  },
+  {
+   "fieldname": "guest_name",
+   "fieldtype": "Data",
+   "label": "Guest"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "included",
+   "fieldtype": "Check",
+   "label": "Included in the Plan",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "folio",
+   "fieldtype": "Link",
+   "label": "Guest Folio",
+   "options": "Guest Folio",
+   "read_only": 1,
+   "no_copy": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-16 08:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Activity Booking",
+ "owner": "Administrator",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "permissions": [
+  {
+   "role": "Hotel Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Hotel Front Desk",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Hotel Accountant",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  }
+ ],
+ "autoname": "ACT-.YYYY.-.#####",
+ "title_field": "activity",
+ "icon": "fa fa-ticket",
+ "track_changes": 1,
+ "allow_rename": 0
+}

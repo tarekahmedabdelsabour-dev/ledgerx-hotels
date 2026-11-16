@@ -11,6 +11,16 @@ Hotel management for LedgerX, built on the accounting, selling and CRM modules. 
 - **Cancellation policy:** free until N days before arrival, then a percentage of the first night; no-show charges the first night.
 - **Links:** guests are Customers (so the CRM sees them); airport pick-up can name a Vehicle; reports for arrivals/departures, occupancy and open folios.
 
+## For a small hotel or a whole resort
+Everything beyond rooms is optional. In **Hotel Settings > Departments** switch on only what you run: Restaurants and Bars, Activities and Services, Group Bookings, Housekeeping and Maintenance. A ten-room guest house uses rooms, rates and folios; a resort turns everything on.
+
+- **Restaurants, cafes, bars, pool bar, spa, beach, shop (Outlet):** each with its own revenue account, cost center and warehouse. The menu is the *Hotel Service Item* list (price, meal period, stock item). An order is posted to a checked-in guest's room, or paid on the spot by someone who is not staying (any accepted currency).
+- **Meal plans:** room only, bed & breakfast, half board, full board and *all inclusive*. A guest has one included meal per period per person per day (snacks and drinks unlimited for all inclusive); anything beyond is charged. An outlet can be marked as not serving the plans (paid à la carte).
+- **Activities:** pool, beach, water sports, spa, trips, entertainment: sessions with a capacity (seats are locked, so the last seat cannot be sold twice), charged to the room or paid on the spot, free for all-inclusive guests when the activity is marked so.
+- **Groups:** a company or agent books N rooms of each type; one draft reservation per room is created, priced by the company's rate plan, confirmed all-or-nothing, billed together.
+- **Housekeeping and maintenance:** a cleaning task when a guest leaves and every morning for occupied rooms; maintenance requests can take a room out of service; guest requests and complaints.
+- **Revenue by Department:** rooms, food and beverage, activities per outlet.
+
 ## Install
 See `docs/INSTALL.md`.
 

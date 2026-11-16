@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "creation": "2026-11-16 08:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "activity_name",
+  "outlet",
+  "category",
+  "cb1",
+  "currency",
+  "price",
+  "capacity",
+  "duration_minutes",
+  "included_in_all_inclusive",
+  "taxable"
+ ],
+ "fields": [
+  {
+   "fieldname": "activity_name",
+   "fieldtype": "Data",
+   "label": "Activity",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "outlet",
+   "fieldtype": "Link",
+   "label": "Outlet",
+   "options": "Outlet",
+   "in_standard_filter": 1,
+   "description": "The spa, beach or pool that runs it (for the revenue account and cost center)."
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Pool\\nBeach\\nWater Sports\\nSpa\\nSports\\nTrip\\nEntertainment\\nKids\\nOther",
+   "default": "Other",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price per Person",
+   "options": "currency",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Default Capacity",
+   "default": 10
+  },
+  {
+   "fieldname": "duration_minutes",
+   "fieldtype": "Int",
+   "label": "Duration (minutes)",
+   "default": 60
+  },
+  {
+   "fieldname": "included_in_all_inclusive",
+   "fieldtype": "Check",
+   "label": "Free for All Inclusive Guests"
+  },
+  {
+   "fieldname": "taxable",
+   "fieldtype": "Check",
+   "label": "Subject to Service Charge and Taxes",
+   "default": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-16 08:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Hotel Activity",
+ "owner": "Administrator",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "permissions": [
+  {
+   "role": "Hotel Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Hotel Front Desk",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "Hotel Accountant",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  }
+ ],
+ "autoname": "field:activity_name",
+ "title_field": "activity_name",
+ "icon": "fa fa-life-ring",
+ "allow_rename": 0
+}

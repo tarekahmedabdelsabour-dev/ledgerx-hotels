@@ -12,6 +12,7 @@ class Reservation(Document):
 	def validate(self):
 		if not self.check_in or not self.check_out:
 			return
+		self.guest_name = self.guest_name or self.guest
 		self.nights = logic.nights_between(self.check_in, self.check_out)
 		if self.nights < 1:
 			frappe.throw(_("Check-out must be after check-in"))
@@ -85,6 +86,8 @@ class Reservation(Document):
 		if logic.to_date(self.check_out) > logic.to_date(today):
 			availability.release(self.name, from_date=today)  # leaving early frees the rest of the nights
 		frappe.db.set_value("Hotel Room", self.room, "status", "Dirty")
+		if billing.settings().enable_operations:
+			frappe.get_doc({"doctype": "Housekeeping Task", "room": self.room, "task_type": "Cleaning After Departure", "task_date": nowdate()}).insert(ignore_permissions=True)
 		self.db_set("status", "Checked Out")
 		self.reload()
 		return {"invoice": folio.sales_invoice, "balance": folio.balance}

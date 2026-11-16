@@ -5,6 +5,7 @@
  "engine": "InnoDB",
  "field_order": [
   "guest",
+  "guest_name",
   "hotel",
   "check_in",
   "check_out",
@@ -37,6 +38,7 @@
   "transfer_vehicle",
   "cb4",
   "folio",
+  "group",
   "promotion_counted"
  ],
  "fields": [
@@ -48,6 +50,13 @@
    "reqd": 1,
    "in_list_view": 1,
    "in_standard_filter": 1
+  },
+  {
+   "fieldname": "guest_name",
+   "fieldtype": "Data",
+   "label": "Name on the Room",
+   "in_list_view": 1,
+   "description": "Who really sleeps in the room (for groups and companies)."
   },
   {
    "fieldname": "hotel",
@@ -140,7 +149,7 @@
    "fieldname": "meal_plan",
    "fieldtype": "Select",
    "label": "Meal Plan",
-   "options": "Room Only\nBed & Breakfast\nHalf Board\nFull Board",
+   "options": "Room Only\nBed & Breakfast\nHalf Board\nFull Board\nAll Inclusive",
    "default": "Bed & Breakfast",
    "reqd": 1
   },
@@ -255,6 +264,14 @@
    "fieldtype": "Link",
    "label": "Guest Folio",
    "options": "Guest Folio",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Link",
+   "label": "Group Booking",
+   "options": "Group Booking",
    "read_only": 1,
    "no_copy": 1
   },

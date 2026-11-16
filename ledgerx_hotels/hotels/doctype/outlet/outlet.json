@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "creation": "2026-11-16 08:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "outlet_name",
+  "hotel",
+  "outlet_type",
+  "enabled",
+  "cb1",
+  "included_in_meal_plans",
+  "income_account",
+  "cost_center",
+  "warehouse"
+ ],
+ "fields": [
+  {
+   "fieldname": "outlet_name",
+   "fieldtype": "Data",
+   "label": "Outlet",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "hotel",
+   "fieldtype": "Link",
+   "label": "Hotel",
+   "options": "Hotel",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "outlet_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Restaurant\\nCafe\\nBar\\nPool Bar\\nBeach\\nSpa\\nShop\\nOther",
+   "default": "Restaurant",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled",
+   "default": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "included_in_meal_plans",
+   "fieldtype": "Check",
+   "label": "Meal Plans Are Served Here",
+   "default": 1,
+   "description": "Untick for a paid à la carte restaurant: guests on half board or all inclusive pay there."
+  },
+  {
+   "fieldname": "income_account",
+   "fieldtype": "Link",
+   "label": "Revenue Account",
+   "options": "Account",
+   "description": "Empty: the department account in Hotel Settings."
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "description": "Where stock items sold here are issued from."
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-16 08:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hotels",
+ "name": "Outlet",
+ "owner": "Administrator",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "permissions": [
+  {
+   "role": "Hotel Manager",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Hotel Front Desk",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1,
+   "write": 1
+  },
+  {
+   "role": "Hotel Accountant",
+   "read": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "print": 1,
+   "export": 1
+  }
+ ],
+ "autoname": "field:outlet_name",
+ "title_field": "outlet_name",
+ "icon": "fa fa-cutlery",
+ "allow_rename": 0
+}

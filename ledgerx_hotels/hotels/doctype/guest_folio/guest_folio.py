@@ -33,14 +33,19 @@ class GuestFolio(Document):
 	def add_charge(self, description, rate, qty=1, charge_type="Service", service_item=None, taxable=1):
 		if self.status in ("Closed", "To Bill", "Cancelled"):
 			frappe.throw(_("The folio is {0}: charges can no longer be added").format(_(self.status)))
+		outlet, dept = None, "Other"
 		if service_item:
-			it = frappe.db.get_value("Hotel Service Item", service_item, ["service_name", "currency", "taxable"], as_dict=True)
+			from ledgerx_hotels.engine import postings
+
+			it = frappe.db.get_value("Hotel Service Item", service_item, ["service_name", "currency", "taxable", "outlet"], as_dict=True)
+			outlet = it.outlet
+			dept = postings.department_of(outlet) if outlet else "Other"
 			conv = currency.rate(it.currency, self.currency)
 			rate = logic.convert(rate, conv)
 			description = description or it.service_name
 			taxable = it.taxable
 		self.append("charges", {"charge_date": nowdate(), "charge_type": charge_type, "description": description, "service_item": service_item,
-			"qty": flt(qty) or 1, "rate": flt(rate), "taxable": int(taxable)})
+			"qty": flt(qty) or 1, "rate": flt(rate), "taxable": int(taxable), "department": dept, "outlet": outlet})
 		self.save()
 		return self.grand_total
 
@@ -78,7 +83,7 @@ class GuestFolio(Document):
 		if self.room_charges_posted:
 			return
 		for n in reservation.nightly_rates:
-			self.append("charges", {"charge_date": n.night_date, "charge_type": "Room", "description": _("Room night {0}").format(n.night_date),
+			self.append("charges", {"charge_date": n.night_date, "charge_type": "Room", "department": "Rooms", "description": _("Room night {0}").format(n.night_date),
 				"qty": 1, "rate": n.rate_in_folio_currency, "taxable": 1})
 		if flt(reservation.discount):
 			self.append("charges", {"charge_date": nowdate(), "charge_type": "Other", "description": _("Discount {0}").format(reservation.promotion or ""),
