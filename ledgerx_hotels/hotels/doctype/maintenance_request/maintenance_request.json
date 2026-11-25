@@ -125,5 +125,6 @@
  ],
  "autoname": "format:MNT-{#####}",
  "icon": "fa fa-wrench",
- "allow_rename": 0
+ "allow_rename": 0,
+ "track_changes": 1
 }

@@ -136,5 +136,6 @@
  "autoname": "field:service_name",
  "title_field": "service_name",
  "icon": "fa fa-concierge-bell",
- "allow_rename": 0
+ "allow_rename": 0,
+ "track_changes": 1
 }

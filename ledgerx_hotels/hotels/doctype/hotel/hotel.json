@@ -116,5 +116,6 @@
  "autoname": "field:hotel_name",
  "title_field": "hotel_name",
  "icon": "fa fa-building",
- "allow_rename": 0
+ "allow_rename": 0,
+ "track_changes": 1
 }

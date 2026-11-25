@@ -114,5 +114,6 @@
  ],
  "autoname": "format:HK-{#####}",
  "icon": "fa fa-trash",
- "allow_rename": 0
+ "allow_rename": 0,
+ "track_changes": 1
 }

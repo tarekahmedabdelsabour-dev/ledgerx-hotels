@@ -106,5 +106,6 @@
  ],
  "autoname": "format:SES-{#####}",
  "icon": "fa fa-clock-o",
- "allow_rename": 0
+ "allow_rename": 0,
+ "track_changes": 1
 }

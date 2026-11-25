@@ -130,5 +130,6 @@
  "autoname": "field:activity_name",
  "title_field": "activity_name",
  "icon": "fa fa-life-ring",
- "allow_rename": 0
+ "allow_rename": 0,
+ "track_changes": 1
 }

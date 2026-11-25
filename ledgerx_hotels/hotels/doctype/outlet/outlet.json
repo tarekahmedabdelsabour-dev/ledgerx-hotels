@@ -127,5 +127,6 @@
  "autoname": "field:outlet_name",
  "title_field": "outlet_name",
  "icon": "fa fa-cutlery",
- "allow_rename": 0
+ "allow_rename": 0,
+ "track_changes": 1
 }
