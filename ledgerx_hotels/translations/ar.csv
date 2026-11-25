@@ -424,3 +424,4 @@ Reservations per Month,الحجوزات شهريًا
 Reservations by Status,الحجوزات حسب الحالة
 Rooms by Status,الغرف حسب الحالة
 Restaurant Orders per Month,طلبات المطاعم شهريًا
+The exchange rate differs from the system rate ({0}) by more than 2 percent. Update Currency Exchange instead.,سعر الصرف يختلف عن سعر النظام ({0}) بأكثر من 2 بالمئة. حدّث أسعار الصرف بدلًا من ذلك.

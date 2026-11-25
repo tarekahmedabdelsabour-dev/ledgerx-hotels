@@ -49,9 +49,10 @@ class OutletOrder(Document):
 		if self.status != "Open":
 			frappe.throw(_("The order is {0}").format(_(self.status)))
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def post_to_room(self):
 		"""Charge the order to the room: what the plan covers goes in at zero, the rest at the item's price."""
+		self.check_permission("write")
 		self._need_open()
 		if not self.reservation:
 			frappe.throw(_("Choose the room first, or take payment on the spot"))
@@ -73,9 +74,10 @@ class OutletOrder(Document):
 		self.issue_stock()
 		return {"folio": folio.name, "total": self.net_total}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def pay_now(self, method):
 		"""Someone who is not staying pays on the spot, in any accepted currency."""
+		self.check_permission("write")
 		self._need_open()
 		if self.reservation:
 			frappe.throw(_("This order belongs to a room: post it to the room"))
@@ -93,8 +95,9 @@ class OutletOrder(Document):
 		self.issue_stock()
 		return {"invoice": inv, "amount": amount, "currency": cur}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def cancel_order(self):
+		self.check_permission("write")
 		self._need_open()
 		self.flags.internal = True
 		self.db_set("status", "Cancelled")

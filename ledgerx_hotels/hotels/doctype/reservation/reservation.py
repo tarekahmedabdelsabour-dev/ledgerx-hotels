@@ -46,8 +46,9 @@ class Reservation(Document):
 		if self.status not in statuses:
 			frappe.throw(_("This reservation is {0}").format(_(self.status)))
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def confirm(self):
+		self.check_permission("write")
 		self._need("Draft")
 		room = availability.assign_room(self)
 		availability.lock(self.name, room, self.check_in, self.check_out)
@@ -63,8 +64,9 @@ class Reservation(Document):
 		self.reload()
 		return {"room": room, "folio": folio.name, "deposit_required": self.deposit_required}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def check_in_guest(self):
+		self.check_permission("write")
 		self._need("Confirmed")
 		if logic.to_date(self.check_in) > logic.to_date(nowdate()):
 			frappe.throw(_("The guest arrives on {0}: it is not the day yet").format(self.check_in))
@@ -76,8 +78,9 @@ class Reservation(Document):
 		self.db_set("status", "Checked In")
 		return {"folio": self.folio}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def check_out_guest(self):
+		self.check_permission("write")
 		self._need("Checked In")
 		folio = frappe.get_doc("Guest Folio", self.folio)
 		folio.reload()
@@ -116,20 +119,23 @@ class Reservation(Document):
 		self.reload()
 		return {"fee": fee, "deposit_paid": folio.paid if folio else 0}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def cancel_reservation(self):
+		self.check_permission("write")
 		self._need("Draft", "Confirmed")
 		return self._end_without_stay("Cancelled")
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def mark_no_show(self):
+		self.check_permission("write")
 		self._need("Confirmed")
 		if logic.to_date(self.check_in) >= logic.to_date(nowdate()):
 			frappe.throw(_("The arrival date has not passed yet"))
 		return self._end_without_stay("No Show", fee_pct_override=100)
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def change_room(self, room):
+		self.check_permission("write")
 		self._need("Confirmed", "Checked In")
 		if frappe.db.get_value("Hotel Room", room, "room_type") != self.room_type:
 			frappe.throw(_("The new room must be of the same room type. To change the type, cancel and book again."))
@@ -145,9 +151,10 @@ class Reservation(Document):
 				frappe.db.set_value("Guest Folio", self.folio, "room", room)
 		return {"room": room}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def change_dates(self, check_in, check_out):
 		"""Move a confirmed stay (before arrival). Prices again and keeps the same room if it is free."""
+		self.check_permission("write")
 		self._need("Confirmed")
 		old = (self.check_in, self.check_out, self.room)
 		if logic.nights_between(check_in, check_out) < 1:

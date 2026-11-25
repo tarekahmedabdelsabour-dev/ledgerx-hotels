@@ -46,8 +46,9 @@ class ActivityBooking(Document):
 				"qty": 1, "rate": self.total, "taxable": act.taxable, "included": self.included, "source_ref": self.name}])
 			self.db_set("folio", folio.name)
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def pay_now(self, method):
+		self.check_permission("write")
 		if self.status != "Booked" or self.reservation or self.sales_invoice:
 			frappe.throw(_("This booking is not waiting for payment"))
 		if not flt(self.total):
@@ -61,8 +62,9 @@ class ActivityBooking(Document):
 		self.db_set("sales_invoice", inv)
 		return {"invoice": inv, "amount": amount, "currency": cur}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def cancel_booking(self):
+		self.check_permission("write")
 		if self.status != "Booked":
 			frappe.throw(_("The booking is {0}").format(_(self.status)))
 		if self.sales_invoice:

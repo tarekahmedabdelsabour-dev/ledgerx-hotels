@@ -29,8 +29,9 @@ class GuestFolio(Document):
 		if self.status in ("Cancelled",):
 			frappe.throw(_("The folio is cancelled"))
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def add_charge(self, description, rate, qty=1, charge_type="Service", service_item=None, taxable=1):
+		self.check_permission("write")
 		if self.status in ("Closed", "To Bill", "Cancelled"):
 			frappe.throw(_("The folio is {0}: charges can no longer be added").format(_(self.status)))
 		outlet, dept = None, "Other"
@@ -49,9 +50,10 @@ class GuestFolio(Document):
 		self.save()
 		return self.grand_total
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def add_payment(self, payment_type, method, amount, reference=None, exchange_rate=None):
 		"""Receive a deposit or payment, or give a refund, in any accepted currency."""
+		self.check_permission("write")
 		self._writable()
 		if payment_type not in ("Deposit", "Payment", "Refund"):
 			frappe.throw(_("Unknown payment type"))
@@ -62,7 +64,10 @@ class GuestFolio(Document):
 		if not m:
 			frappe.throw(_("Unknown payment method"))
 		d = nowdate()
-		conv_folio = flt(exchange_rate) or currency.rate(m.currency, self.currency, d)
+		conv_folio = currency.rate(m.currency, self.currency, d)
+		# the rate comes from Currency Exchange, never from the caller; a typed rate may only differ by a small margin
+		if flt(exchange_rate) and abs(flt(exchange_rate) - conv_folio) > conv_folio * 0.02:
+			frappe.throw(_("The exchange rate differs from the system rate ({0}) by more than 2 percent. Update Currency Exchange instead.").format(conv_folio))
 		base_cur = currency.company_currency(self.company)
 		row = self.append("payments", {"payment_date": d, "payment_type": payment_type, "method": method, "pay_currency": m.currency,
 			"amount": amount, "exchange_rate": conv_folio, "amount_in_folio_currency": logic.convert(amount, conv_folio), "reference": reference})
@@ -71,8 +76,8 @@ class GuestFolio(Document):
 		self.save()
 		row = self.payments[-1]
 		# exchange_rate_to_base is not a stored field: the Payment Entry reads the live rate unless a manual rate was given
-		if exchange_rate:
-			row.exchange_rate_to_base = flt(exchange_rate) * currency.rate(self.currency, base_cur, d)
+		if flt(exchange_rate):
+			row.exchange_rate_to_base = conv_folio * currency.rate(self.currency, base_cur, d)
 		row.payment_entry = billing.create_payment_entry(self, row)
 		row.db_update()
 		self.reload()

@@ -19,9 +19,10 @@ class GroupBooking(Document):
 	def reservations(self):
 		return frappe.get_all("Reservation", filters={"group": self.name}, fields=["name", "status", "room", "guest_name"], order_by="creation asc")
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def create_reservations(self):
 		"""One draft reservation per room needed, billed to the company or agent. Priced by the company's own rate plan if it has one."""
+		self.check_permission("write")
 		if self.status != "Draft":
 			frappe.throw(_("The group is {0}").format(_(self.status)))
 		n = 0
@@ -35,9 +36,10 @@ class GroupBooking(Document):
 		self.db_set("status", "Rooms Created")
 		return {"reservations": n}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def confirm_all(self):
 		"""Confirm every room of the group. All or nothing: if one room cannot be had, nothing is held."""
+		self.check_permission("write")
 		if self.status != "Rooms Created":
 			frappe.throw(_("Create the reservations first"))
 		for r in self.reservations():
@@ -46,8 +48,9 @@ class GroupBooking(Document):
 		self.db_set("status", "Confirmed")
 		return {"confirmed": len(self.reservations())}
 
-	@frappe.whitelist()
+	@frappe.whitelist(methods=["POST"])
 	def cancel_group(self):
+		self.check_permission("write")
 		if self.status in ("Cancelled",):
 			return
 		out = []
