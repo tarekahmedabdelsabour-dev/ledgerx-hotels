@@ -159,6 +159,10 @@ def bill_corporate(today=None):
 	out = []
 	for (customer, cur), folios in groups.items():
 		try:
+			# lock each folio and look again: a second run (or a double click) that got here first has already billed it
+			folios = [d for d in folios if frappe.db.get_value("Guest Folio", d.name, "status", for_update=True) == "To Bill"]
+			if not folios:
+				continue
 			name = build_invoice(customer, folios, cur)
 			for d in folios:
 				d.db_set({"sales_invoice": name, "status": "Closed"})
@@ -170,7 +174,7 @@ def bill_corporate(today=None):
 	return out
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def bill_corporate_now():
 	frappe.only_for(["Hotel Manager", "Hotel Accountant", "System Manager"])
 	return bill_corporate()
