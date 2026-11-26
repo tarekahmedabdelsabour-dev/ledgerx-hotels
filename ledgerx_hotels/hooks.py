@@ -5,7 +5,7 @@ app_description = "Hotel management: rooms, reservations without double booking,
 app_email = "hello@ledgerx.local"
 app_license = "mit"
 
-required_apps = ["erpnext"]
+required_apps = ["erpnext", "ledgerx"]
 
 add_to_apps_screen = [
 	{
